@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f1c2e">
+<!-- ЗМІНИ: назва й опис (їх бачить Google). Шукай у файлі слово "ЗМІНИ" (Ctrl+F), щоб знайти все, що треба міняти. -->
+<title>Барбершоп «Лезо» — чоловічі стрижки та борода</title>
+<meta name="description" content="Чоловічі стрижки, догляд за бородою, королівське гоління. Запис за телефоном або в Instagram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ЗМІНИ: кольори міняються лише тут */
+:root{
+  --navy:#0f1c2e;
+  --navy-2:#16263c;
+  --bone:#f2efe8;
+  --muted:#aab4c3;
+  --red:#b7312c;
+  --blue:#3f6fa8;
+  --line:#2a3b55;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--navy);color:var(--bone);line-height:1.6}
+h1,h2,h3,.logo{font-family:Bitter,Georgia,"Times New Roman",serif;font-weight:800;line-height:1.15}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--bone);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(1.8rem,4.5vw,2.4rem);margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:36px;max-width:60ch}
+
+.btn{display:inline-block;padding:14px 26px;background:var(--red);color:#fff;font-weight:600;border-radius:2px;border:2px solid var(--red)}
+.btn:hover{background:#9c2823;border-color:#9c2823}
+.btn.ghost{background:transparent;color:var(--bone);border-color:var(--bone)}
+.btn.ghost:hover{background:var(--bone);color:var(--navy)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Шапка */
+header{position:sticky;top:0;z-index:10;background:rgba(15,28,46,.95);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:1.5rem}
+.tel{font-weight:600}
+
+/* Головний екран. ЗМІНИ: фото кладеш у папку images і називаєш hero.jpg */
+.hero{min-height:76vh;display:flex;align-items:center;
+  background:linear-gradient(rgba(15,28,46,.72),rgba(15,28,46,.92)),url("images/hero.jpg") center/cover,var(--navy-2)}
+.hero h1{font-size:clamp(2.6rem,9vw,5rem);max-width:12ch;margin-bottom:20px}
+.hero p{max-width:46ch;color:var(--muted);margin-bottom:32px;font-size:1.1rem}
+
+/* Барберська стрічка: єдиний яскравий елемент сторінки */
+.pole{height:16px;background:repeating-linear-gradient(-45deg,var(--red) 0 16px,var(--bone) 16px 32px,var(--blue) 32px 48px,var(--bone) 48px 64px)}
+
+/* Ціни */
+.price-list{list-style:none;display:grid;gap:0 56px;grid-template-columns:1fr}
+.price-list li{display:flex;align-items:baseline;gap:10px;padding:14px 0}
+.price-list .time{display:block;color:var(--muted);font-size:.85rem}
+.price-list .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-6px)}
+.price-list .price{font-family:Bitter,Georgia,serif;font-weight:700;font-size:1.2rem;white-space:nowrap}
+
+/* Про нас */
+.points{display:grid;gap:32px;grid-template-columns:1fr}
+.point{border-top:3px solid var(--red);padding-top:16px}
+.point h3{font-size:1.15rem;margin-bottom:8px}
+.point p{color:var(--muted)}
+
+/* Роботи. ЗМІНИ: фото work-1.jpg ... work-4.jpg у папці images */
+.gallery{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.gallery div{aspect-ratio:1;background:var(--navy-2) center/cover;border:1px solid var(--line)}
+
+/* Контакти */
+.contacts{display:grid;gap:32px;grid-template-columns:1fr}
+.contacts h3{font-size:1.1rem;margin-bottom:8px}
+.contacts p{color:var(--muted)}
+.contacts a.link{color:var(--bone);border-bottom:2px solid var(--red)}
+
+footer{border-top:1px solid var(--line);padding:28px 0 96px;color:var(--muted);font-size:.85rem}
+
+/* Кнопка «Записатись» внизу екрана на телефоні */
+.float{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;text-align:center}
+
+@media (min-width:760px){
+  .price-list{grid-template-columns:1fr 1fr}
+  .points,.contacts{grid-template-columns:repeat(3,1fr)}
+  .gallery{grid-template-columns:repeat(4,1fr)}
+  .float{display:none}
+  footer{padding-bottom:28px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <!-- ЗМІНИ: назва барбершопу -->
+    <a class="logo" href="#top">Лезо</a>
+    <!-- ЗМІНИ: телефон (цей номер повторюється ще двічі нижче: Ctrl+H замінить усі одразу) -->
+    <a class="tel" href="tel:+380000000000">+38 000 000 00 00</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <!-- ЗМІНИ: заголовок і текст під ним -->
+      <h1>Стрижка, що тримає форму</h1>
+      <p>Чоловічі стрижки, догляд за бородою та королівське гоління. Запис за дзвінком або в Instagram.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+380000000000">Записатись</a>
+        <!-- ЗМІНИ: посилання на Instagram барбершопу -->
+        <a class="btn ghost" href="https://instagram.com/your_barbershop">Написати в Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="pole" aria-hidden="true"></div>
+
+  <section id="prices">
+    <div class="wrap">
+      <h2>Ціни</h2>
+      <p class="sub">Усі послуги включають миття голови та укладання.</p>
+      <!-- ЗМІНИ: назви, час і ціни. Один рядок = один блок <li>...</li> -->
+      <ul class="price-list">
+        <li><span><strong>Чоловіча стрижка</strong><span class="time">45 хв</span></span><span class="dots"></span><span class="price">500 грн</span></li>
+        <li><span><strong>Стрижка + борода</strong><span class="time">75 хв</span></span><span class="dots"></span><span class="price">800 грн</span></li>
+        <li><span><strong>Моделювання бороди</strong><span class="time">30 хв</span></span><span class="dots"></span><span class="price">350 грн</span></li>
+        <li><span><strong>Королівське гоління</strong><span class="time">40 хв</span></span><span class="dots"></span><span class="price">450 грн</span></li>
+        <li><span><strong>Дитяча стрижка</strong><span class="time">30 хв</span></span><span class="dots"></span><span class="price">350 грн</span></li>
+        <li><span><strong>Камуфляж сивини</strong><span class="time">30 хв</span></span><span class="dots"></span><span class="price">300 грн</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about" style="background:var(--navy-2)">
+    <div class="wrap">
+      <h2>Як ми працюємо</h2>
+      <p class="sub">Тут лише те, що справді правда про цей барбершоп.</p>
+      <!-- ЗМІНИ: ці три пункти мають збігатися з реальністю. Спитай власника, не вигадуй. -->
+      <div class="points">
+        <div class="point"><h3>Тільки за записом</h3><p>Ти приходиш у свій час і не чекаєш у черзі.</p></div>
+        <div class="point"><h3>Майстри з досвідом</h3><p>Кожен майстер працює у професії понад 3 роки.</p></div>
+        <div class="point"><h3>Чистий інструмент</h3><p>Після кожного клієнта інструмент обробляється.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>Наші роботи</h2>
+      <p class="sub">Приклади стрижок і бороди.</p>
+      <!-- ЗМІНИ: поклади 4 фото в папку images і назви їх work-1.jpg ... work-4.jpg. Без фото тут будуть порожні плитки. -->
+      <div class="gallery">
+        <div style="background-image:url('images/work-1.jpg')"></div>
+        <div style="background-image:url('images/work-2.jpg')"></div>
+        <div style="background-image:url('images/work-3.jpg')"></div>
+        <div style="background-image:url('images/work-4.jpg')"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" style="background:var(--navy-2)">
+    <div class="wrap">
+      <h2>Як нас знайти</h2>
+      <p class="sub">Запис потрібен, щоб тебе чекав вільний майстер.</p>
+      <div class="contacts">
+        <div>
+          <h3>Адреса</h3>
+          <!-- ЗМІНИ: адреса й посилання на Google Maps -->
+          <p>вул. Прикладна, 12</p>
+          <p><a class="link" href="https://maps.google.com">Відкрити на карті</a></p>
+        </div>
+        <div>
+          <h3>Години роботи</h3>
+          <!-- ЗМІНИ: графік -->
+          <p>Пн–Сб: 10:00–20:00</p>
+          <p>Нд: 11:00–18:00</p>
+        </div>
+        <div>
+          <h3>Запис</h3>
+          <p><a class="link" href="tel:+380000000000">+38 000 000 00 00</a></p>
+          <p><a class="link" href="https://instagram.com/your_barbershop">Instagram</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Барбершоп «Лезо»</div>
+</footer>
+
+<a class="btn float" href="tel:+380000000000">Записатись</a>
+
+</body>
+</html>
